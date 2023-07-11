@@ -6,18 +6,16 @@ import React from "react";
 // export const socket = io(SOCKET_URL);
 
 
-// var connectionOptions = {
-//     "force new connection": true,
-//     reconnectionAttempts: "Infinity",
-//     timeout: 10000,
-//     transports: ["websocket"],
-//   };
-  const URL = "https://chat-app-backend-chi-virid.vercel.app"; 
+var connectionOptions = {
+    "force new connection": true,
+    reconnectionAttempts: "Infinity",
+    timeout: 10000,
+    transports: ["websocket"],
+};
+const ENDPOINT = "https://chat-app-backend-chi-virid.vercel.app";
 // const ENDPOINT = "http://localhost:5001"; 
 
-export const socket = io(URL, {
-    autoConnect: false
-  });
+export const socket = io(ENDPOINT, connectionOptions);
 
 
 // app context
