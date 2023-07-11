@@ -11,12 +11,9 @@ export function MessageForm() {
     const user = useSelector((state) => state.user);
     const { socket, currentRoom, setMessages, messages, privateMemberMsg } = useContext(AppContext);
     const messageEndRef = useRef(null);
-
-
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
-
 
     function getFormattedDate() {
         const date = new Date();
@@ -42,7 +39,6 @@ export function MessageForm() {
     const todayDate = getFormattedDate();
 
     socket.off("room-messages").on("room-messages", (roomMessages) => {
-        console.log(roomMessages);
         setMessages(roomMessages);
     });
 
@@ -56,7 +52,6 @@ export function MessageForm() {
         socket.emit("message-room", roomId, message, user, time, todayDate);
         setMessage("");
     }
-
     return (
         <>
             <div className="messages-output">

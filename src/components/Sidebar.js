@@ -23,7 +23,7 @@ export function Sidebar() {
         if (isPublic) {
             setPrivateMemberMsg(null);
         }
-        /* dispatch for notifications */
+        // dispatch for notifications
         dispatch(resetNotifications(room));
     }
 
@@ -44,6 +44,7 @@ export function Sidebar() {
         setMembers(payload);
     });
 
+
     function getRooms() {
         fetch("https://chat-app-backend-chi-virid.vercel.app/rooms")
             .then((res) => res.json())
@@ -63,7 +64,6 @@ export function Sidebar() {
         const roomId = orderIds(user._id, member._id);
         joinRoom(roomId, false);
     }
-
 
     if (!user) {
         return <></>;
