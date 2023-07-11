@@ -39,7 +39,7 @@ export function MessageForm() {
 
     const todayDate = getFormattedDate();
 
-    socket.off("room-messages").on("room-messages", (roomMessages) => {
+    socket.on("room-messages").off("room-messages", (roomMessages) => {
         setMessages(roomMessages);
     });
 
