@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
-import { API } from '../config';
 import { AppContext } from "../context/appContext";
 import { addNotifications, resetNotifications } from "../features/userSlice";
 import "./Sidebar.css";
@@ -46,7 +45,7 @@ export function Sidebar() {
     });
 
     function getRooms() {
-        fetch(`${API}/rooms`)
+        fetch("https://chat-app-backend-chi-virid.vercel.app/rooms")
             .then((res) => res.json())
             .then((data) => setRooms(data));
     }

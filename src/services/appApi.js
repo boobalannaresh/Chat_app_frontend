@@ -1,12 +1,12 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import { API } from "../config";
+
 
 //// Define a service User a Base URL
 
 const appApi = createApi({
     reducerPath: 'appApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: `${API}`
+        baseUrl: "https://chat-app-backend-chi-virid.vercel.app"
     }),
 
     endpoints: (builder) => ({
