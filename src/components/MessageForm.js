@@ -11,6 +11,7 @@ export function MessageForm() {
     const user = useSelector((state) => state.user);
     const { socket, currentRoom, setMessages, messages, privateMemberMsg } = useContext(AppContext);
     const messageEndRef = useRef(null);
+
     useEffect(() => {
         scrollToBottom();
     }, [messages]);
@@ -51,7 +52,9 @@ export function MessageForm() {
         const roomId = currentRoom;
         socket.emit("message-room", roomId, message, user, time, todayDate);
         setMessage("");
+        socket.disconnect();
     }
+
     return (
         <>
             <div className="messages-output">
