@@ -13,6 +13,8 @@ var connectionOptions = {
     transports: ["websocket"],
   };
   const ENDPOINT = "https://chat-app-backend-chi-virid.vercel.app"; 
+// const ENDPOINT = "http://localhost:5001"; 
+
 export  const socket = io(ENDPOINT, connectionOptions);
 
 
