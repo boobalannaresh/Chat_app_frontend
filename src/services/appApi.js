@@ -1,4 +1,4 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 
 //// Define a service User a Base URL
@@ -6,7 +6,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 const appApi = createApi({
     reducerPath: 'appApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: "https://chat-app-backend-chi-virid.vercel.app"
+        baseUrl: "http://localhost:5001"
     }),
 
     endpoints: (builder) => ({
@@ -22,7 +22,7 @@ const appApi = createApi({
 
         //// Login 
         loginUser: builder.mutation({
-            query:(user)=> ({
+            query: (user) => ({
                 url: "/users/login",
                 method: "POST",
                 body: user
@@ -42,6 +42,6 @@ const appApi = createApi({
     })
 })
 
-export const {useSignupUserMutation, useLoginUserMutation, useLogoutUserMutation} = appApi;
+export const { useSignupUserMutation, useLoginUserMutation, useLogoutUserMutation } = appApi;
 
 export default appApi;

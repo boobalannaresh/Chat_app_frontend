@@ -46,7 +46,7 @@ export function Sidebar() {
 
 
     function getRooms() {
-        fetch("https://chat-app-backend-chi-virid.vercel.app/rooms")
+        fetch("http://localhost:5001/rooms")
             .then((res) => res.json())
             .then((data) => setRooms(data));
     }
