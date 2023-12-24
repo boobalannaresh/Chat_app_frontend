@@ -46,7 +46,7 @@ export function Sidebar() {
 
 
     function getRooms() {
-        fetch("http://localhost:5001/rooms")
+        fetch("https://chat-app-backend-ol2i.onrender.com/rooms")
             .then((res) => res.json())
             .then((data) => setRooms(data));
     }
@@ -96,7 +96,7 @@ export function Sidebar() {
                             {member.status == "offline" && " (Offline)"}
                         </Col>
                         <Col xs={1}>
-                            <span className="badge rounded-pill bg-primary">{user.newMessages[orderIds(member._id, user._id)] }</span>
+                            <span className="badge rounded-pill bg-primary">{user.newMessages[orderIds(member._id, user._id)]}</span>
                         </Col>
                     </Row>
                 </ListGroup.Item>
